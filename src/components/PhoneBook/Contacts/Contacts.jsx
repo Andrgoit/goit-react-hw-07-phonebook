@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeContact } from 'redux/slice';
 import { getFilter, getContacts } from 'redux/selectors';
 import { StyledList, StyledItem, StyledIconSpan } from './Contacts.styled';
-import { FaRegTrashAlt } from 'react-icons/fa';
+import { FaRegTrashAlt, FaRegUser } from 'react-icons/fa';
 
 export default function Contacts() {
   // достаем из store массив контактов
@@ -28,6 +28,7 @@ export default function Contacts() {
       {filteredContacts.map(({ name, number, id }) => {
         return (
           <StyledItem key={id}>
+            <FaRegUser />
             {name} : {number}
             <StyledIconSpan onClick={() => dispatch(removeContact(id))}>
               <FaRegTrashAlt />

@@ -1,4 +1,5 @@
 import { Box } from 'components/Box';
+import { StyledText, StyledLink } from './Footer.styled';
 
 export default function Footer() {
   return (
@@ -13,7 +14,10 @@ export default function Footer() {
       alignItems="center"
       color="white"
     >
-      Creat by AndrGoIt
+      <StyledText>
+        Create by{' '}
+        <StyledLink href="https://github.com/Andrgoit">AndrGoIt</StyledLink>
+      </StyledText>
     </Box>
   );
 }

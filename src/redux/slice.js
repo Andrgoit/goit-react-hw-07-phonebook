@@ -1,12 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
 
 // const contactsInitialState = {
 //   constacts: [
@@ -37,12 +29,6 @@ export const contactSlice = createSlice({
       state.value = state.value.filter(item => item.id !== action.payload);
     },
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
 });
 export const { addContact, removeContact } = contactSlice.actions;
 

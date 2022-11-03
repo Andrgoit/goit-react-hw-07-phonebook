@@ -4,6 +4,8 @@ const theme = {
     title: 'red',
     text: '#000',
     value: 'red',
+    bgHeader: '#1d528d',
+    bgFooter: '#1d528d',
     bgMain: '#f5f3f3',
     bgContainer: '#eb8a1b',
     primaryButton: '#07c',

@@ -8,6 +8,8 @@ import {
   grid,
   typography,
   position,
+  shadow,
+  background,
 } from 'styled-system';
 
 export const Box = styled('div')(
@@ -18,7 +20,9 @@ export const Box = styled('div')(
   border,
   grid,
   typography,
-  position
+  position,
+  shadow,
+  background
 );
 
 // Пример
@@ -213,3 +217,35 @@ export const Box = styled('div')(
 // borderLeftColor;
 // borderX;
 // borderY;
+
+//---------------------------------------------
+
+// Position;
+
+// import { position } from 'styled-system';
+// // or `import position from '@styled-system/position'`
+
+// <Box position="absolute" top={0} left={0} right={0} bottom={0}>
+//   Cover
+// </Box>;
+
+// position
+// zIndex
+// top
+// right
+// bottom
+// left
+
+//----------------------------------------------
+
+// Shadow;
+
+// import { shadow } from 'styled-system';
+// // or `import shadow from '@styled-system/shadow'`
+
+// <Text textShadow="2px 2px #ff0000" boxShadow="5px 10px #888888">
+//   Text with shadows
+// </Text>;
+
+// textShadow
+// boxShadow

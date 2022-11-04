@@ -1,25 +1,25 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { nanoid } from 'nanoid';
+
 import {
   StyledForm,
   StyledInput,
   Styledlabel,
   StyledButton,
 } from './ContactForm.styled';
-import { addContact } from 'redux/slice';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts-operations';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
 
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
   const handlerSubmitForm = e => {
-    const id = nanoid();
     e.preventDefault();
 
     //проверка на дубликат
@@ -31,7 +31,7 @@ const ContactForm = () => {
       resetForm();
       return toast.info(`${name} is already in contacts`);
     }
-    dispatch(addContact({ id, name, number }));
+    dispatch(addContact({ name, phone }));
     resetForm();
   };
 
@@ -42,8 +42,8 @@ const ContactForm = () => {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setPhone(value);
         break;
       default:
         break;
@@ -52,7 +52,7 @@ const ContactForm = () => {
 
   const resetForm = () => {
     setName('');
-    setNumber('');
+    setPhone('');
   };
 
   return (
@@ -69,13 +69,13 @@ const ContactForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-        <Styledlabel htmlFor="number">Number</Styledlabel>
+        <Styledlabel htmlFor="phone">Number</Styledlabel>
         <StyledInput
           type="tel"
           onChange={handlerChange}
-          value={number}
-          id="number"
-          name="number"
+          value={phone}
+          id="phone"
+          name="phone"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

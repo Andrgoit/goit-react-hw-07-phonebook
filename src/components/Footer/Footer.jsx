@@ -1,9 +1,11 @@
 import { Box } from 'components/Box';
+import { BsGithub } from 'react-icons/bs';
 import { StyledText, StyledLink } from './Footer.styled';
 
 export default function Footer() {
   return (
     <Box
+      py={3}
       as="footer"
       minHeight="50px"
       display="flex"
@@ -14,10 +16,12 @@ export default function Footer() {
       alignItems="center"
       color="white"
     >
-      <StyledText>
-        Create by{' '}
-        <StyledLink href="https://github.com/Andrgoit">AndrGoIt</StyledLink>
-      </StyledText>
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <StyledText>Create by</StyledText>
+        <StyledLink href="https://github.com/Andrgoit">
+          <BsGithub size="24px" />
+        </StyledLink>
+      </Box>
     </Box>
   );
 }

@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledMain = styled.main`
-  /* background: url('https://cdn.pixabay.com/photo/2012/03/03/23/06/wall-21534_960_720.jpg'); */
+  background: linear-gradient(
+    315deg,
+    rgb(93, 152, 219) 50%,
+    rgb(186, 209, 234) 75%,
+    rgb(93, 152, 219)
+  );
   /* background-color: ${p => p.theme.colors.bgMain}; */
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
